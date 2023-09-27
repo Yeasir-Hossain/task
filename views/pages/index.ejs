@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+  .background {
+    background-color: #E6F1F6;
+  }
+</style>
+
+<body class="container">
+
+
+  <main>
+    <div class="jumbotron">
+      <table style="width: 100%;">
+        <tr style="text-align: center;">
+          <th>Commit</th>
+          <th>Author</th>
+          <th>Date</th>
+        </tr>
+        <% for(const d of data) { %>
+          <tr class="
+          <% if (/[0-9]+$/.test(d.sha)) { %>
+            background
+            <% } %>
+            " style="text-align: center;">
+            <td>
+              <%= d.sha %>
+            </td>
+            <td>
+              <%= d.commit.author.name %>
+            </td>
+            <td>
+              <%= new Intl.DateTimeFormat('en-US',{month:'2-digit',day:'2-digit', year:'numeric'}).format(new
+                Date(d.commit.author.date)) %>
+            </td>
+          </tr>
+          <% } %>
+
+      </table>
+    </div>
+  </main>
+
+
+</body>
+
+</html>
